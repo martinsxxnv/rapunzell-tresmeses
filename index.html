@@ -1,0 +1,2835 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Entre Lanternas e Estrelas — 3 Meses</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080613;
+    color:#f5e7c5;
+    font-family:"Cormorant Garamond",serif;
+    overflow-x:hidden;
+}
+
+button{
+    font-family:inherit;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =================================
+   INTRO
+================================= */
+
+#intro{
+    position:fixed;
+    inset:0;
+    background:#070511;
+    z-index:9999;
+    display:grid;
+    place-items:center;
+    align-content:center;
+    text-align:center;
+    transition:1.2s;
+}
+
+.intro-stars{
+    position:absolute;
+    inset:0;
+
+    background-image:
+        radial-gradient(#fff 1px,transparent 1px),
+        radial-gradient(#ffe49a 1px,transparent 1px);
+
+    background-size:
+        75px 75px,
+        120px 120px;
+
+    opacity:.4;
+}
+
+.intro-lantern{
+    font-size:75px;
+
+    filter:
+        drop-shadow(0 0 35px #ffd36d);
+
+    animation:bob 2s infinite alternate;
+}
+
+#intro p{
+    position:relative;
+
+    margin-top:20px;
+
+    font-family:Cinzel;
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    color:#d3b76e;
+}
+
+#intro h1{
+    position:relative;
+
+    font-size:clamp(55px,9vw,100px);
+
+    font-weight:400;
+
+    line-height:.85;
+
+    margin:20px 0 35px;
+}
+
+#intro h1 em{
+    font-family:"Great Vibes";
+
+    color:#e4c56e;
+
+    font-style:normal;
+}
+
+#enter{
+    position:relative;
+
+    padding:15px 27px;
+
+    border:1px solid #d7b768;
+
+    background:transparent;
+
+    color:#f4df9d;
+
+    border-radius:30px;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#enter:hover{
+    background:#d7b768;
+
+    color:#1b1029;
+}
+
+@keyframes bob{
+
+    to{
+        transform:
+            translateY(-12px)
+            rotate(3deg);
+    }
+
+}
+
+
+/* =================================
+   FUNDO
+================================= */
+
+.stars{
+    position:fixed;
+
+    inset:0;
+
+    z-index:-8;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #251945,
+            #0a0714 65%
+        );
+}
+
+.stars:before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+        radial-gradient(#fff 1px,transparent 1px),
+        radial-gradient(#f8df9c 1px,transparent 1px);
+
+    background-size:
+        113px 107px,
+        179px 151px;
+
+    background-position:
+        10px 30px,
+        50px 20px;
+
+    opacity:.5;
+}
+
+.fireflies{
+    position:fixed;
+
+    inset:0;
+
+    z-index:-2;
+
+    pointer-events:none;
+}
+
+.fly{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:#ffe9a7;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 12px 4px #ffd76c;
+
+    animation:
+        fly 5s infinite
+        alternate ease-in-out;
+}
+
+@keyframes fly{
+
+    to{
+        transform:
+            translate(20px,-35px);
+
+        opacity:.2;
+    }
+
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+header{
+    height:72px;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:100;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 6vw;
+
+    background:
+        linear-gradient(
+            #080613e8,
+            transparent
+        );
+}
+
+.logo{
+    font-family:Cinzel;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    color:#e4c36d;
+}
+
+nav{
+    display:flex;
+
+    gap:30px;
+
+    font-family:Cinzel;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+nav a{
+    opacity:.75;
+
+    transition:.2s;
+}
+
+nav a:hover{
+    opacity:1;
+
+    color:#e5c66e;
+}
+
+#music{
+    border:1px solid #c7a75c55;
+
+    background:#161025;
+
+    color:#e4c36d;
+
+    border-radius:50%;
+
+    width:40px;
+    height:40px;
+
+    cursor:pointer;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.hero{
+    height:100vh;
+
+    min-height:700px;
+
+    position:relative;
+
+    display:grid;
+
+    place-items:center;
+
+    overflow:hidden;
+}
+
+.moon{
+    position:absolute;
+
+    right:13%;
+    top:16%;
+
+    width:145px;
+    height:145px;
+
+    border-radius:50%;
+
+    background:#fff0c5;
+
+    box-shadow:
+        0 0 90px 20px #ffe3a833;
+}
+
+.cloud{
+    position:absolute;
+
+    width:280px;
+    height:80px;
+
+    border-radius:50%;
+
+    background:#24183b;
+
+    filter:blur(8px);
+
+    opacity:.55;
+}
+
+.c1{
+    left:-80px;
+    bottom:18%;
+}
+
+.c2{
+    right:-100px;
+    top:38%;
+}
+
+
+/* TORRE */
+
+.tower{
+    position:absolute;
+
+    right:6%;
+    bottom:-30px;
+
+    width:210px;
+    height:470px;
+}
+
+.roof{
+    position:absolute;
+
+    top:0;
+    left:-15px;
+
+    border-left:
+        120px solid transparent;
+
+    border-right:
+        120px solid transparent;
+
+    border-bottom:
+        130px solid #5a385f;
+
+    filter:
+        drop-shadow(
+            0 0 4px #dfbb6c
+        );
+}
+
+.tower-top{
+    position:absolute;
+
+    top:105px;
+    left:40px;
+
+    width:130px;
+    height:85px;
+
+    background:#a97983;
+
+    border:2px solid #d9b56c;
+}
+
+.window{
+    width:38px;
+    height:58px;
+
+    border:5px solid #e2bd6d;
+
+    border-radius:
+        50% 50% 4px 4px;
+
+    background:#151027;
+
+    margin:15px auto;
+}
+
+.tower-wall{
+    position:absolute;
+
+    bottom:0;
+    left:22px;
+
+    width:166px;
+    height:300px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5c4268,
+            #bb8385,
+            #604269
+        );
+
+    clip-path:
+        polygon(
+            10% 0,
+            90% 0,
+            100% 100%,
+            0 100%
+        );
+
+    border:2px solid #d9b56c;
+}
+
+.balcony{
+    position:absolute;
+
+    z-index:4;
+
+    left:53px;
+    top:183px;
+
+    width:105px;
+    height:28px;
+
+    border:
+        4px solid #d7b56b;
+
+    border-bottom:0;
+
+    border-radius:50%;
+}
+
+.hair{
+    position:absolute;
+
+    z-index:5;
+
+    top:165px;
+    left:99px;
+
+    width:24px;
+    height:440px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d89c3c,
+            #ffe98e,
+            #dba13e
+        );
+
+    border-radius:30px;
+
+    box-shadow:
+        0 0 35px #ffdb6a77;
+
+    transform:rotate(7deg);
+}
+
+
+/* HERO TEXTO */
+
+.hero-text{
+    text-align:center;
+
+    z-index:6;
+
+    width:min(680px,85vw);
+
+    margin-right:18vw;
+}
+
+.hero-text small,
+.chapter>small,
+.timeline-title small,
+.light-title small,
+.letter-section small,
+.tower-game>small,
+.final>small{
+
+    font-family:Cinzel;
+
+    letter-spacing:5px;
+
+    color:#cdb06a;
+
+    font-size:10px;
+}
+
+.hero-text h2{
+
+    font-size:
+        clamp(45px,6vw,80px);
+
+    font-weight:400;
+
+    margin:25px 0 0;
+}
+
+.hero h1{
+
+    font-family:"Great Vibes";
+
+    color:#e4c56e;
+
+    font-size:
+        clamp(75px,11vw,145px);
+
+    line-height:.7;
+
+    font-weight:400;
+
+    margin:0 0 35px;
+}
+
+.hero-text>p{
+
+    font-size:20px;
+
+    line-height:1.5;
+
+    color:#ded2bd;
+}
+
+.gold{
+
+    margin-top:20px;
+
+    border:1px solid #d9b96d;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d3ad58,
+            #f1da94
+        );
+
+    color:#24152e;
+
+    padding:15px 25px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+        0 0 30px #e0bd6d22;
+}
+
+.gold:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 0 40px #e0bd6d55;
+}
+
+.hero-bottom{
+
+    position:absolute;
+
+    bottom:25px;
+
+    font-family:Cinzel;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    opacity:.55;
+}
+
+
+/* =================================
+   CAPÍTULOS
+================================= */
+
+.chapter{
+
+    min-height:100vh;
+
+    padding:140px 8vw;
+
+    display:flex;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.chapter-number{
+
+    width:45px;
+    height:45px;
+
+    border:
+        1px solid #c6a75c;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    color:#d7b96e;
+
+    font-family:Cinzel;
+
+    margin-bottom:30px;
+}
+
+.chapter h2,
+.timeline h2,
+.light-title h2,
+.memories h2,
+.tower-game h2{
+
+    font-size:
+        clamp(55px,8vw,100px);
+
+    font-weight:400;
+
+    line-height:.85;
+
+    margin:25px 0;
+}
+
+.chapter h2 em,
+.timeline h2 em,
+.light-title h2 em,
+.memories h2 em,
+.tower-game h2 em,
+.final h2 em{
+
+    font-family:"Great Vibes";
+
+    font-style:normal;
+
+    color:#e4c56e;
+}
+
+.wide{
+
+    max-width:760px;
+
+    font-size:21px;
+
+    line-height:1.65;
+
+    color:#d9cbb5;
+}
+
+.date{
+
+    margin-top:40px;
+
+    padding:30px 70px;
+
+    background:#151024aa;
+
+    border:
+        1px solid #b99a5a55;
+
+    box-shadow:
+        0 25px 80px #0005;
+}
+
+.date span,
+.date small{
+
+    display:block;
+
+    font-family:Cinzel;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    color:#bda362;
+}
+
+.date strong{
+
+    font-size:45px;
+
+    font-weight:500;
+
+    display:block;
+
+    margin:10px;
+}
+
+.scroll-line{
+
+    height:90px;
+
+    border-left:
+        1px solid #c5a65c55;
+
+    margin-top:auto;
+}
+
+
+/* =================================
+   TIMELINE
+================================= */
+
+.timeline{
+
+    padding:130px 8vw;
+
+    min-height:100vh;
+
+    background:
+        linear-gradient(
+            #0b0716,
+            #17102a,
+            #0b0716
+        );
+
+    text-align:center;
+}
+
+.timeline-items{
+
+    max-width:1100px;
+
+    margin:70px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+}
+
+.timeline-items article{
+
+    min-height:280px;
+
+    padding:35px 22px;
+
+    border-top:
+        1px solid #bca05f44;
+
+    border-bottom:
+        1px solid #bca05f22;
+
+    background:#130d23;
+
+    transition:.35s;
+}
+
+.timeline-items article:hover,
+.timeline-items .highlight{
+
+    background:#211533;
+
+    transform:
+        translateY(-10px);
+}
+
+.timeline-items i{
+
+    font-style:normal;
+
+    color:#d9ba6b;
+
+    font-size:28px;
+}
+
+.timeline-items h3{
+
+    font-size:25px;
+
+    font-weight:500;
+
+    margin:20px 0;
+}
+
+.timeline-items p{
+
+    color:#c9bba8;
+
+    line-height:1.5;
+
+    font-size:17px;
+}
+
+
+/* =================================
+   LANTERNAS
+================================= */
+
+.light-section{
+
+    height:100vh;
+
+    min-height:700px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:grid;
+
+    place-items:center;
+
+    text-align:center;
+
+    background:#080714;
+}
+
+.light-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #352052 0,
+            #100a1d 55%,
+            #05040c 100%
+        );
+}
+
+.light-title{
+
+    z-index:4;
+}
+
+.light-title h2{
+
+    font-size:
+        clamp(70px,10vw,130px);
+}
+
+.light-title p{
+
+    font-size:19px;
+}
+
+.click-l{
+
+    position:absolute;
+
+    z-index:5;
+
+    width:24px;
+    height:35px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#ffe39a;
+
+    box-shadow:
+        0 0 40px 12px #ffd56c77;
+
+    cursor:pointer;
+
+    animation:
+        drift 6s infinite
+        alternate ease-in-out;
+}
+
+.click-l:after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-10px;
+
+    left:50%;
+
+    height:12px;
+
+    border-left:
+        1px solid #c4a25d;
+}
+
+@keyframes drift{
+
+    to{
+        transform:
+            translate(25px,-35px);
+    }
+
+}
+
+
+/* MODAL */
+
+#message{
+
+    position:fixed;
+
+    z-index:300;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.8);
+
+    width:min(470px,88vw);
+
+    padding:55px 35px;
+
+    background:#f3e2b9;
+
+    color:#2c1738;
+
+    text-align:center;
+
+    font-size:27px;
+
+    line-height:1.3;
+
+    box-shadow:
+        0 30px 100px #000c;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.35s;
+}
+
+#message.open{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+}
+
+#close{
+
+    position:absolute;
+
+    right:12px;
+    top:8px;
+
+    border:0;
+
+    background:none;
+
+    font-size:30px;
+
+    color:#4d2b4e;
+
+    cursor:pointer;
+}
+
+
+/* =================================
+   FOTOS
+================================= */
+
+.memories{
+    min-height:100vh;
+}
+
+.album{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:30px;
+
+    width:min(1000px,100%);
+
+    margin-top:50px;
+}
+
+.frame{
+
+    height:430px;
+
+    background:#171026;
+
+    border:
+        8px solid #e6d1a0;
+
+    box-shadow:
+        0 20px 50px #0008;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.frame:before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8px;
+
+    border:
+        1px solid #d1ae66;
+
+    pointer-events:none;
+}
+
+.frame input{
+    display:none;
+}
+
+.placeholder{
+
+    height:100%;
+
+    display:grid;
+
+    place-content:center;
+
+    color:#d7b76b;
+
+    font-size:45px;
+
+    text-align:center;
+}
+
+.placeholder span{
+
+    display:block;
+
+    font-family:Cinzel;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    margin-top:15px;
+}
+
+.frame img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.f2{
+    transform:translateY(35px);
+}
+
+.f3{
+    transform:translateY(-20px);
+}
+
+
+/* =================================
+   PASCAL
+================================= */
+
+.tower-game{
+
+    min-height:80vh;
+
+    padding:130px 8vw;
+
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+.tower-game p{
+
+    font-size:20px;
+
+    margin:20px;
+}
+
+.tower-game #pascal{
+
+    background:none;
+
+    border:0;
+
+    font-size:75px;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.tower-game #pascal:hover{
+
+    transform:
+        rotate(-12deg)
+        scale(1.2);
+}
+
+#reward{
+
+    opacity:0;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    color:#b9df98;
+
+    font-size:25px;
+
+    transition:.5s;
+}
+
+#reward.show{
+
+    opacity:1;
+
+    max-height:150px;
+
+    margin-top:20px;
+}
+
+#reward strong{
+
+    font-family:Cinzel;
+
+    font-size:12px;
+
+    letter-spacing:4px;
+}
+
+
+/* =================================
+   CARTA
+================================= */
+
+.letter-section{
+
+    min-height:100vh;
+
+    padding:130px 7vw;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #24183d,
+            #090613 70%
+        );
+
+    display:grid;
+
+    place-items:center;
+
+    position:relative;
+}
+
+.envelope{
+
+    width:280px;
+    height:190px;
+
+    background:#d8b77a;
+
+    position:absolute;
+
+    display:grid;
+
+    place-items:center;
+
+    cursor:pointer;
+
+    z-index:5;
+
+    box-shadow:
+        0 30px 80px #0008;
+
+    transition:1s;
+}
+
+.envelope:before,
+.envelope:after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-style:solid;
+}
+
+.envelope:before{
+
+    border-width:
+        95px 140px 0;
+
+    border-color:
+        #e8cf99 transparent transparent;
+}
+
+.envelope:after{
+
+    border-width:
+        0 140px 95px;
+
+    border-color:
+        transparent transparent #b88e51;
+}
+
+.envelope .seal{
+
+    z-index:3;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:#753d53;
+
+    color:#f3dba2;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:25px;
+
+    box-shadow:
+        0 5px 10px #0004;
+}
+
+.envelope span{
+
+    position:absolute;
+
+    bottom:-40px;
+
+    color:#d7bd83;
+
+    font-family:Cinzel;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+}
+
+.envelope.open{
+
+    opacity:0;
+
+    transform:
+        translateY(-250px)
+        rotate(8deg);
+
+    pointer-events:none;
+}
+
+.letter{
+
+    max-width:820px;
+
+    width:100%;
+
+    background:#f2e2b9;
+
+    color:#342039;
+
+    padding:
+        70px
+        clamp(25px,7vw,85px);
+
+    box-shadow:
+        0 30px 100px #000b;
+
+    position:relative;
+
+    opacity:0;
+
+    transform:
+        translateY(80px);
+
+    transition:1s;
+
+    pointer-events:none;
+}
+
+.letter.show{
+
+    opacity:1;
+
+    transform:none;
+
+    pointer-events:auto;
+}
+
+.letter:before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:15px;
+
+    border:
+        1px solid #80623e66;
+}
+
+.letter h2{
+
+    font-family:"Great Vibes";
+
+    font-size:65px;
+
+    color:#704957;
+
+    font-weight:400;
+
+    margin:20px 0;
+}
+
+#typed{
+
+    font-size:20px;
+
+    line-height:1.85;
+
+    white-space:pre-line;
+
+    min-height:420px;
+}
+
+.wax{
+
+    position:absolute;
+
+    right:35px;
+
+    top:30px;
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    background:#783b52;
+
+    color:#f2d99e;
+
+    font-size:28px;
+}
+
+.sign{
+
+    text-align:right;
+
+    font-size:20px;
+}
+
+.sign em{
+
+    font-family:"Great Vibes";
+
+    font-size:40px;
+}
+
+
+/* =================================
+   FINAL
+================================= */
+
+.final{
+
+    height:100vh;
+
+    min-height:700px;
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #342052,
+            #090613 68%
+        );
+}
+
+.final h2{
+
+    font-size:
+        clamp(80px,12vw,160px);
+
+    line-height:.72;
+
+    font-weight:400;
+
+    margin:25px 0;
+}
+
+.final p{
+
+    max-width:680px;
+
+    font-size:21px;
+
+    line-height:1.6;
+}
+
+.final-lights{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+}
+
+.final-lights i{
+
+    position:absolute;
+
+    width:20px;
+    height:30px;
+
+    border-radius:50%;
+
+    background:#ffe49b;
+
+    box-shadow:
+        0 0 30px 10px #ffd56c66;
+
+    animation:
+        up 12s linear infinite;
+}
+
+@keyframes up{
+
+    from{
+        transform:
+            translateY(100vh);
+    }
+
+    to{
+        transform:
+            translateY(-20vh);
+    }
+
+}
+
+.forever{
+
+    position:absolute;
+
+    bottom:35px;
+
+    font-family:Cinzel;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    color:#b99d63;
+}
+
+footer{
+
+    text-align:center;
+
+    padding:28px;
+
+    background:#07050e;
+
+    color:#786b7b;
+
+    font-family:Cinzel;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media(max-width:800px){
+
+    nav{
+        display:none;
+    }
+
+    .hero-text{
+        margin:0;
+    }
+
+    .tower{
+
+        right:-70px;
+
+        opacity:.4;
+
+        transform:scale(.75);
+
+        transform-origin:bottom;
+    }
+
+    .moon{
+        right:-50px;
+    }
+
+    .timeline-items{
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .album{
+
+        grid-template-columns:1fr;
+    }
+
+    .f2,
+    .f3{
+        transform:none;
+    }
+
+    .frame{
+        height:350px;
+    }
+
+    .letter #typed{
+        font-size:18px;
+    }
+
+    .letter h2{
+        font-size:52px;
+    }
+
+    .chapter h2,
+    .timeline h2,
+    .light-title h2,
+    .memories h2,
+    .tower-game h2{
+
+        font-size:65px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:80px;
+    }
+
+    .hero-text h2{
+        font-size:48px;
+    }
+
+    .timeline-items{
+        grid-template-columns:1fr;
+    }
+
+    .date{
+        padding:25px;
+    }
+
+    .date strong{
+        font-size:35px;
+    }
+
+}
+
+
+/* =================================
+   ANIMAÇÃO DAS LANTERNAS
+================================= */
+
+@keyframes rise{
+
+    to{
+
+        transform:
+            translateY(-115vh)
+            translateX(var(--x));
+
+        opacity:0;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     ABERTURA
+================================= -->
+
+<div id="intro">
+
+    <div class="intro-stars"></div>
+
+    <div class="intro-lantern">
+        🏮
+    </div>
+
+    <p>
+        UMA HISTÓRIA DE DUAS PESSOAS
+    </p>
+
+    <h1>
+        Entre estrelas,<br>
+        <em>encontrei você.</em>
+    </h1>
+
+    <button id="enter">
+        abrir nossa história ✦
+    </button>
+
+</div>
+
+
+<div class="stars"></div>
+
+<div class="fireflies"></div>
+
+<div class="lanterns"></div>
+
+
+<!-- =================================
+     MENU
+================================= -->
+
+<header>
+
+    <a href="#home" class="logo">
+        ✦ V & A ✦
+    </a>
+
+    <nav>
+
+        <a href="#story">
+            história
+        </a>
+
+        <a href="#light">
+            luz
+        </a>
+
+        <a href="#memories">
+            memórias
+        </a>
+
+        <a href="#letter">
+            carta
+        </a>
+
+    </nav>
+
+    <button id="music">
+        ♫
+    </button>
+
+</header>
+
+
+<audio id="audio" loop></audio>
+
+
+<main id="home">
+
+
+<!-- =================================
+     HERO
+================================= -->
+
+<section class="hero">
+
+    <div class="moon"></div>
+
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+
+
+    <div class="tower">
+
+        <div class="roof"></div>
+
+        <div class="tower-top">
+
+            <div class="window"></div>
+
+        </div>
+
+        <div class="tower-wall"></div>
+
+        <div class="balcony"></div>
+
+        <div class="hair"></div>
+
+    </div>
+
+
+    <div class="hero-text">
+
+        <small>
+            UMA HISTÓRIA QUE A GENTE ESCREVE JUNTO
+        </small>
+
+        <h2>
+            Era uma vez...
+        </h2>
+
+        <h1>
+            nós duas.
+        </h1>
+
+        <p>
+
+            Em algum lugar entre uma conversa,
+            uma risada e um sentimento inesperado,
+            nasceu o nosso pequeno conto de fadas.
+
+        </p>
+
+        <button
+            class="gold"
+            onclick="go('#story')"
+        >
+
+            entrar no nosso reino →
+
+        </button>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+        role para descobrir ↓
+
+    </div>
+
+</section>
+
+
+<!-- =================================
+     CAPÍTULO 1
+================================= -->
+
+<section
+    id="story"
+    class="chapter"
+>
+
+    <div class="chapter-number">
+        I
+    </div>
+
+    <small>
+        CAPÍTULO UM
+    </small>
+
+    <h2>
+        O começo de <em>tudo.</em>
+    </h2>
+
+    <p class="wide">
+
+        Se alguém tivesse me contado que uma pessoa
+        poderia chegar e, aos poucos, ocupar tantos
+        espaços dentro de mim, eu talvez não acreditasse.
+        Mas aí você apareceu.
+
+    </p>
+
+    <div class="date">
+
+        <span>
+            NOSSA DATA
+        </span>
+
+        <strong>
+            __/__/____
+        </strong>
+
+        <small>
+            troque pela data em que começaram ♡
+        </small>
+
+    </div>
+
+    <div class="scroll-line"></div>
+
+</section>
+
+
+<!-- =================================
+     CAPÍTULO 2
+================================= -->
+
+<section class="timeline">
+
+    <div class="timeline-title">
+
+        <small>
+            CAPÍTULO DOIS
+        </small>
+
+        <h2>
+
+            Pequenos momentos,<br>
+
+            <em>
+                grandes memórias.
+            </em>
+
+        </h2>
+
+    </div>
+
+
+    <div class="timeline-items">
+
+
+        <article>
+
+            <i>
+                01
+            </i>
+
+            <h3>
+                O primeiro capítulo
+            </h3>
+
+            <p>
+
+                O instante em que nossa história
+                deixou de ser imaginação e virou realidade.
+
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <i>
+                02
+            </i>
+
+            <h3>
+                Primeiro mês
+            </h3>
+
+            <p>
+
+                Um mês descobrindo novas formas
+                de gostar, cuidar, rir e ficar.
+
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <i>
+                03
+            </i>
+
+            <h3>
+                Segundo mês
+            </h3>
+
+            <p>
+
+                Mais conversas, mais saudade,
+                mais motivos para agradecer por ter você.
+
+            </p>
+
+        </article>
+
+
+        <article class="highlight">
+
+            <i>
+                ♡
+            </i>
+
+            <h3>
+                Três meses
+            </h3>
+
+            <p>
+
+                E agora estamos aqui.
+                Três meses de uma história
+                que eu quero continuar escrevendo.
+
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =================================
+     CAPÍTULO 3
+================================= -->
+
+<section
+    id="light"
+    class="light-section"
+>
+
+    <div class="light-bg"></div>
+
+
+    <div class="light-title">
+
+        <small>
+            CAPÍTULO TRÊS
+        </small>
+
+        <h2>
+            Eu vejo a <em>luz.</em>
+        </h2>
+
+        <p>
+            Cada lanterna guarda uma frase.
+            Clique nelas.
+        </p>
+
+    </div>
+
+
+    <div id="click-lanterns"></div>
+
+
+    <div id="message">
+
+        <button id="close">
+            ×
+        </button>
+
+        <span></span>
+
+    </div>
+
+</section>
+
+
+<!-- =================================
+     CAPÍTULO 4
+================================= -->
+
+<section
+    id="memories"
+    class="memories chapter"
+>
+
+    <div class="chapter-number">
+        IV
+    </div>
+
+    <small>
+        CAPÍTULO QUATRO
+    </small>
+
+    <h2>
+        Nosso álbum de <em>memórias.</em>
+    </h2>
+
+    <p class="wide">
+
+        Clique em cada moldura para colocar
+        uma foto de vocês.
+
+    </p>
+
+
+    <div class="album">
+
+
+        <label class="frame">
+
+            <input
+                type="file"
+                accept="image/*"
+            >
+
+            <div class="placeholder">
+
+                ✦
+
+                <span>
+                    nosso momento
+                </span>
+
+            </div>
+
+        </label>
+
+
+        <label class="frame f2">
+
+            <input
+                type="file"
+                accept="image/*"
+            >
+
+            <div class="placeholder">
+
+                ♡
+
+                <span>
+                    nossa memória
+                </span>
+
+            </div>
+
+        </label>
+
+
+        <label class="frame f3">
+
+            <input
+                type="file"
+                accept="image/*"
+            >
+
+            <div class="placeholder">
+
+                ☾
+
+                <span>
+                    mais um capítulo
+                </span>
+
+            </div>
+
+        </label>
+
+
+    </div>
+
+</section>
+
+
+<!-- =================================
+     SURPRESA
+================================= -->
+
+<section class="tower-game">
+
+    <div class="chapter-number">
+        V
+    </div>
+
+    <small>
+        UMA PEQUENA SURPRESA
+    </small>
+
+    <h2>
+        O guardião da <em>torre.</em>
+    </h2>
+
+    <p>
+        Tem alguém escondido por aqui...
+        encontre-o.
+    </p>
+
+    <button id="pascal">
+        🦎
+    </button>
+
+    <div id="reward">
+
+        <strong>
+            VOCÊ ENCONTROU! ♡
+        </strong>
+
+        <br>
+
+        Em qualquer reino,
+        eu ainda escolheria você.
+
+    </div>
+
+</section>
+
+
+<!-- =================================
+     CARTA
+================================= -->
+
+<section
+    id="letter"
+    class="letter-section"
+>
+
+
+    <div
+        class="envelope"
+        id="envelope"
+    >
+
+        <div class="seal">
+            ♡
+        </div>
+
+        <span>
+            clique para abrir
+        </span>
+
+    </div>
+
+
+    <article class="letter">
+
+        <div class="wax">
+            ♡
+        </div>
+
+        <small>
+            UMA CARTA PARA VOCÊ
+        </small>
+
+        <h2>
+            Meu amor,
+        </h2>
+
+        <div id="typed"></div>
+
+        <p class="sign">
+
+            Com todo o meu amor,<br>
+
+            <em>
+                eu. ♡
+            </em>
+
+        </p>
+
+    </article>
+
+
+</section>
+
+
+<!-- =================================
+     FINAL
+================================= -->
+
+<section class="final">
+
+    <div class="final-lights"></div>
+
+    <small>
+        E A HISTÓRIA CONTINUA...
+    </small>
+
+    <h2>
+
+        Você é a minha<br>
+
+        <em>
+            luz.
+        </em>
+
+    </h2>
+
+    <p>
+
+        Três meses são só o começo.
+        Ainda existem muitos lugares para conhecer,
+        muitas risadas para dar e muitos capítulos
+        para escrever.
+
+    </p>
+
+    <button
+        class="gold"
+        onclick="
+            scrollTo({
+                top:0,
+                behavior:'smooth'
+            })
+        "
+    >
+
+        voltar ao começo ✦
+
+    </button>
+
+
+    <div class="forever">
+
+        ♡ para sempre,
+        enquanto houver histórias para contar ♡
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    feito especialmente para a nossa história ✦
+
+</footer>
+
+
+<script>
+
+
+/* =================================
+   ABERTURA
+================================= */
+
+const intro =
+    document.getElementById("intro");
+
+
+document
+    .getElementById("enter")
+    .onclick = () => {
+
+        intro.style.opacity = "0";
+
+        setTimeout(
+            () => intro.remove(),
+            1200
+        );
+
+        spawnMany(18);
+
+    };
+
+
+/* =================================
+   SCROLL
+================================= */
+
+function go(id){
+
+    document
+        .querySelector(id)
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =================================
+   VAGALUMES
+================================= */
+
+const fireflies =
+    document.querySelector(".fireflies");
+
+
+for(let i = 0; i < 90; i++){
+
+    const e =
+        document.createElement("i");
+
+    e.className = "fly";
+
+    e.style.left =
+        Math.random() * 100 + "%";
+
+    e.style.top =
+        Math.random() * 100 + "%";
+
+    e.style.animationDelay =
+        Math.random() * 5 + "s";
+
+    e.style.animationDuration =
+        3 + Math.random() * 6 + "s";
+
+    fireflies.appendChild(e);
+
+}
+
+
+/* =================================
+   LANTERNAS
+================================= */
+
+const lanternLayer =
+    document.querySelector(".lanterns");
+
+
+function lantern(){
+
+    const e =
+        document.createElement("i");
+
+
+    e.style.position =
+        "absolute";
+
+
+    e.style.left =
+        Math.random() * 100 + "%";
+
+
+    e.style.bottom =
+        "-50px";
+
+
+    e.style.width =
+        "15px";
+
+
+    e.style.height =
+        "24px";
+
+
+    e.style.borderRadius =
+        "50%";
+
+
+    e.style.background =
+        "#ffe19a";
+
+
+    e.style.boxShadow =
+        "0 0 28px 10px #ffd56b66";
+
+
+    e.style.setProperty(
+        "--x",
+        Math.floor(
+            Math.random() * 100 - 50
+        ) + "px"
+    );
+
+
+    e.style.animation =
+        `rise ${
+            8 + Math.random() * 9
+        }s linear forwards`;
+
+
+    lanternLayer.appendChild(e);
+
+
+    setTimeout(
+        () => e.remove(),
+        18000
+    );
+
+}
+
+
+function spawnMany(number){
+
+    for(let i = 0; i < number; i++){
+
+        setTimeout(
+            lantern,
+            i * 220
+        );
+
+    }
+
+}
+
+
+setInterval(
+    lantern,
+    1000
+);
+
+
+spawnMany(12);
+
+
+/* =================================
+   LANTERNAS CLICÁVEIS
+================================= */
+
+const messages = [
+
+    "Eu amo o jeito que você consegue fazer um dia comum parecer especial.",
+
+    "Eu amo seus cachinhos, seu jeito e até as pequenas coisas que você acha bobas.",
+
+    "Eu amo poder dividir meus pensamentos com você.",
+
+    "Eu amo quando uma conversa nossa começa com uma coisa e termina em outra KAKAKAKAKKAKA.",
+
+    "Eu amo saber que, entre tantas pessoas no mundo, encontrei você.",
+
+    "Eu escolheria você novamente. Em qualquer lugar, em qualquer universo.",
+
+    "Você é uma das minhas partes favoritas dos meus dias.",
+
+    "Obrigada por existir na minha história. ♡"
+
+];
+
+
+const clickLanterns =
+    document.getElementById(
+        "click-lanterns"
+    );
+
+
+for(let i = 0; i < 17; i++){
+
+    const button =
+        document.createElement("button");
+
+
+    button.className =
+        "click-l";
+
+
+    button.style.left =
+        4 + Math.random() * 92 + "%";
+
+
+    button.style.top =
+        12 + Math.random() * 78 + "%";
+
+
+    button.style.animationDelay =
+        Math.random() * 5 + "s";
+
+
+    button.dataset.message =
+        messages[
+            i % messages.length
+        ];
+
+
+    button.onclick = () => {
+
+        document
+            .querySelector(
+                "#message span"
+            )
+            .textContent =
+            button.dataset.message;
+
+
+        document
+            .getElementById("message")
+            .classList
+            .add("open");
+
+    };
+
+
+    clickLanterns
+        .appendChild(button);
+
+}
+
+
+document
+    .getElementById("close")
+    .onclick = () => {
+
+        document
+            .getElementById("message")
+            .classList
+            .remove("open");
+
+    };
+
+
+/* =================================
+   FOTOS
+================================= */
+
+document
+    .querySelectorAll(
+        ".frame input"
+    )
+    .forEach(input => {
+
+        input.onchange = event => {
+
+            const file =
+                event.target.files[0];
+
+
+            if(!file)
+                return;
+
+
+            const img =
+                document.createElement(
+                    "img"
+                );
+
+
+            img.src =
+                URL.createObjectURL(
+                    file
+                );
+
+
+            const frame =
+                event.target.parentElement;
+
+
+            frame.innerHTML = "";
+
+
+            frame.appendChild(img);
+
+        };
+
+    });
+
+
+/* =================================
+   PASCAL
+================================= */
+
+document
+    .getElementById("pascal")
+    .onclick = () => {
+
+        document
+            .getElementById("reward")
+            .classList
+            .add("show");
+
+    };
+
+
+/* =================================
+   CARTA
+================================= */
+
+const envelope =
+    document.getElementById(
+        "envelope"
+    );
+
+
+const letter =
+    document.querySelector(
+        ".letter"
+    );
+
+
+const typed =
+    document.getElementById(
+        "typed"
+    );
+
+
+/* =================================
+   SEU TEXTO
+================================= */
+
+const letterText = `
+
+Amor,
+
+Hoje fazem três meses que a gente tá juntas e, sinceramente, eu nem sei por onde começar. Estou há dias tentando fazer esse texto. Parece pouco quando eu falo "três meses", mas quando paro pra pensar em tudo que aconteceu nesse tempo, parece que você já faz parte da minha vida há muito tempo.
+
+Eu fico pensando em como uma pessoa consegue chegar na nossa vida e, aos poucos, ocupar um espaço tão grande. E foi exatamente isso que você fez. Quando percebi, já tava completamente apaixonada por você.
+
+Eu amo você de um jeito que às vezes nem sei explicar. Amo seus cachinhos, seu jeito, sua voz, suas manias, as coisas que você fala sem perceber, as nossas conversas que começam com uma coisa e terminam em outra KAKAKAKAKKAKA. Amo até pequenos detalhes seus que talvez você nem perceba que eu reparo, porque é justamente ali que eu vejo você.
+
+Às vezes queria conseguir entrar na sua cabeça só por alguns segundos pra você conseguir se enxergar do jeito que eu te enxergo. Porque talvez você entendesse o tamanho do carinho que eu tenho por você. Talvez entendesse por que eu fico toda boba quando você fala alguma coisa fofa, porque eu sorrio olhando nossas mensagens.
+
+Então, se algum dia você esquecer o quanto você é amada, volta nesse texto. Lê de novo e lembra que existe alguém que ficou dias tentando achar palavras que definissem o quanto você é perfeita.
+
+Eu tenho muita vontade de me tornar uma pessoa melhor e mais madura, não só por mim, mas por nós. Quero aprender, crescer, melhorar meus erros e me tornar alguém capaz de ficar ao seu lado por muito, muito tempo. Quero construir algo bonito com você que, um dia, eu possa olhar pra tudo que a gente viveu e pensar que valeu a pena cada esforço, cada aprendizado e cada escolha.
+
+E talvez seja por isso que eu queria tanto amadurecer ao seu lado. Porque quero ser capaz de ficar. Quero ser capaz de cuidar, respeitar, compreender e continuar escolhendo você mesmo quando a vida ficar difícil.
+
+Porque só assim, depois de tudo isso, eu vou poder dizer, com a consciência limpa e o coração mais tranquilo do mundo:
+
+A CACHINHOS É MINHA NAMORADA.
+
+E não só porque eu tenho você hoje, mas porque eu quero ser alguém digno de continuar tendo você amanhã, depois de amanhã e em todos os dias que a vida permitir.
+
+E se eu pudesse resumir tudo isso em uma coisa só, seria:
+
+Obrigada por ter chegado na minha vida e por ter deixado ela mais bonita com você.
+
+Feliz três meses pra nós, meu amor 🤍
+
+Eu te amo. Amo muito. E espero que você nunca se acostume com isso, porque eu tenho MUITA coisa pra te dizer, muitos momentos pra viver com você e muito amor pra te dar. 🤍
+
+`;
+
+
+let typing = false;
+
+
+envelope.onclick = () => {
+
+    envelope.classList.add(
+        "open"
+    );
+
+
+    letter.classList.add(
+        "show"
+    );
+
+
+    if(typing)
+        return;
+
+
+    typing = true;
+
+
+    let index = 0;
+
+
+    function type(){
+
+        if(
+            index <
+            letterText.length
+        ){
+
+            typed.textContent +=
+                letterText[index];
+
+            index++;
+
+
+            setTimeout(
+                type,
+                18
+            );
+
+        }
+
+    }
+
+
+    setTimeout(
+        type,
+        700
+    );
+
+};
+
+
+/* =================================
+   MÚSICA
+================================= */
+
+document
+    .getElementById("music")
+    .onclick = () => {
+
+        const audio =
+            document.getElementById(
+                "audio"
+            );
+
+
+        if(!audio.src){
+
+            alert(
+                "Para adicionar música, coloque um arquivo de música no site e configure o elemento audio."
+            );
+
+            return;
+
+        }
+
+
+        if(audio.paused){
+
+            audio.play();
+
+        }else{
+
+            audio.pause();
+
+        }
+
+    };
+
+
+/* =================================
+   LANTERNAS FINAIS
+================================= */
+
+const finalLights =
+    document.querySelector(
+        ".final-lights"
+    );
+
+
+for(let i = 0; i < 25; i++){
+
+    const light =
+        document.createElement("i");
+
+
+    light.style.left =
+        Math.random() * 100 + "%";
+
+
+    light.style.animationDelay =
+        Math.random() * 12 + "s";
+
+
+    light.style.animationDuration =
+        8 + Math.random() * 9 + "s";
+
+
+    finalLights.appendChild(
+        light
+    );
+
+}
+
+</script>
+
+</body>
+</html>
