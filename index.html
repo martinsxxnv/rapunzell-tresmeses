@@ -1753,14 +1753,18 @@ footer{
 
     </nav>
 
-    <button id="music">
-        ♫
-    </button>
+    <a
+    id="music"
+    href="https://open.spotify.com/track/4w3VY"
+    target="_blank"
+>
+    ♫
+</a>
 
 </header>
 
 
-<audio id="audio" loop></audio>
+<audio id="audio" loop src="musica.mp3"></audio>
 
 
 <main id="home">
@@ -1871,19 +1875,15 @@ footer{
     </p>
 
     <div class="date">
+          <span>NOSSA DATA</span>
 
-        <span>
-            NOSSA DATA
-        </span>
-
-        <strong>
-            __/__/____
-        </strong>
-
-        <small>
-            troque pela data em que começaram ♡
-        </small>
-
+        <input
+            type="text"
+            id="nossaData"
+            placeholder="__/__/__"
+            maxlength="10"
+            inputmode="numeric"
+        >
     </div>
 
     <div class="scroll-line"></div>
@@ -2074,73 +2074,27 @@ footer{
 
     <p class="wide">
 
-        Clique em cada moldura para colocar
+        Clique em cada moldura para
         uma foto de vocês.
 
     </p>
 
 
     <div class="album">
+        <div class="frame">
+            <img src="foto1.jpg" alt="Nossa foto">
+        </div>
 
+    <div class="frame f2">
+            <img src="foto2.jpg" alt="Nossa memória">
+        </div>
 
-        <label class="frame">
+    <div class="frame f3">
+            <img src="foto3.jpg" alt="Mais um capítulo">
+        </div>
 
-            <input
-                type="file"
-                accept="image/*"
-            >
-
-            <div class="placeholder">
-
-                ✦
-
-                <span>
-                    nosso momento
-                </span>
-
-            </div>
-
-        </label>
-
-
-        <label class="frame f2">
-
-            <input
-                type="file"
-                accept="image/*"
-            >
-
-            <div class="placeholder">
-
-                ♡
-
-                <span>
-                    nossa memória
-                </span>
-
-            </div>
-
-        </label>
-
-
-        <label class="frame f3">
-
-            <input
-                type="file"
-                accept="image/*"
-            >
-
-            <div class="placeholder">
-
-                ☾
-
-                <span>
-                    mais um capítulo
-                </span>
-
-            </div>
-
-        </label>
+        
+            
 
 
     </div>
